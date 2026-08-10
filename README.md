@@ -1,47 +1,24 @@
-# Synthetic Ferry Environment + Full-MIP Baseline
+# NGFLO Final Research Package
 
-This package is the first computational layer for the manuscript
-"A Neural-Guided Optimization Framework for Large-Scale Dynamic Vehicle-Ferry Loading."
+## Manuscript
+- `NGFLO_Final_Manuscript.tex`: complete 7-section manuscript.
+- `NGFLO_Final_Manuscript.pdf`: compiled manuscript.
 
-## Files
-- synthetic_ferry_full_mip.py: reproducible synthetic instance generator and static Full-MIP solver.
-- baseline_full_mip_pilot.csv: initial five-instance pilot output.
+## Main figures
+- Candidate-restriction gap versus K.
+- Variable retention versus K.
+- Commitment-aware dynamic runtime comparison.
+- Dynamic loaded-vehicle comparison.
+- Hard-residual stress runtime savings.
 
-## Current modeled constraints
-1. One outcome per vehicle: assign to one compatible lane/deck or defer.
-2. Width and height compatibility.
-3. Lane-length capacity.
-4. Lane mass capacity.
-5. Deck total-mass capacity.
-6. Linear transverse-balance envelope.
-7. Heavy-vehicle deck restrictions.
+## Reproducible result tables
+The `results/` directory contains the exact benchmark certification summary, held-out scorer recall, reduced-MIP candidate frontier, hardness-router predictions, complete three-intensity dynamic aggregate results, and replicated hard-residual stress results.
 
-## Not yet included
-- exact within-lane vehicle ordering;
-- explicit discharge-sequence blocking constraints;
-- ramp conflicts;
-- axle-load limits;
-- ballast/hydrostatic equations;
-- fire-zone / dangerous-goods rules;
-- stochastic arrivals and rolling-horizon state transitions.
+## Core code
+The `code/` directory contains the ordered-slot benchmark model, graph-scorer training script, hardness-router builder, commitment-aware rolling-horizon implementation, and delayed-commitment stress implementation.
 
-These must be added before the model is treated as an operator-complete ferry-loading model.
+## Scope and limitations
+All current experiments are synthetic. The modeled ferry is a simplified ordered-slot, single-ramp representation with lane/deck capacity, deck mass, a transverse-balance envelope, compatibility, and discharge-order constraints. It does not yet model operator-specific ramp networks, hydrostatics/ballast, axle loads, fire zones, dangerous-goods separation, or empirical terminal calibration. The manuscript states these limitations explicitly.
 
-## Pilot interpretation
-The initial pilot uses the medium synthetic ferry and seed 11 with a 5-second MIP limit.
-
-The 50-vehicle case was essentially solved to optimality.
-The 100- and 200-vehicle cases had very small reported MIP gaps.
-The 300-vehicle case remained close to the current best bound.
-The 400-vehicle case was strongly time-limited (reported MIP gap about 0.50) and therefore
-must NOT be presented as an optimal Full-MIP benchmark.
-
-All reported post-solve linear-constraint violations were 0.0 at displayed precision.
-
-## Next validation stage
-1. Add exact lane-position / discharge-order structure.
-2. Introduce controlled congestion scenarios.
-3. Run multiple random seeds for each size.
-4. Use longer solve times for small/medium cases to establish certified optimal benchmarks.
-5. Save both incumbent objective and lower bound for time-limited large cases.
-6. Only after this baseline is validated, generate training labels for NGFLO.
+## Core result
+The evidence supports NGFLO as a state-selective acceleration layer embedded inside an exact feasibility-certified optimizer. It does not support universal speed dominance over Full-MIP.
