@@ -1,0 +1,3 @@
+congestion,seeds,adaptive_epochs_mean,adaptive_epochs_total,max_hard_probability,mean_hard_probability
+balanced,3,1.0,3,0.8409057911305431,0.19940085233758278
+heavy,3,1.3333333333333333,4,0.9977289932808184,0.333884822903733
