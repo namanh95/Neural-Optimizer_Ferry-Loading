@@ -1,0 +1,9 @@
+ferry,congestion,n,seed,runtime_s,status,message,n_binary,n_x,success,mip_gap,mip_node_count,objective,loaded,deferred,load_rate,length_utilization,max_violation,discharge_inversions
+small,balanced,30,11,0.3254848959999208,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),5966,5936,True,0.0,1.0,4.516553055510038,30,0,1.0,0.2007709040113575,2.6645352591003757e-15,0
+small,balanced,30,22,0.24385668999991594,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),5966,5936,True,0.0,1.0,4.498797970549944,30,0,1.0,0.19859099165204086,3.3306690738754696e-16,0
+small,balanced,50,11,5.0619998139999325,1,Time limit reached. (HiGHS Status 13: Time limit reached),10018,9968,True,2.5947850157134233e-06,3.0,7.941817622278924,50,0,1.0,0.34401254654118724,0.0,0
+small,balanced,50,22,5.074559106000038,1,Time limit reached. (HiGHS Status 13: Time limit reached),9906,9856,True,8.166587524037608e-05,0.0,7.824895784144339,50,0,1.0,0.33403990527245714,4.884981308350689e-15,0
+small,heavy,30,11,0.4278930570000057,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),4958,4928,True,0.0,1.0,4.463542371591288,30,0,1.0,0.26896801049642927,1.0658141036401503e-14,0
+small,heavy,30,22,0.5571345660000588,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),5182,5152,True,0.0,1.0,4.425169771575623,30,0,1.0,0.261146511353236,0.0,0
+small,heavy,50,11,5.051761209000006,1,Time limit reached. (HiGHS Status 13: Time limit reached),8786,8736,True,0.0008795315254717241,0.0,7.901466720344029,50,0,1.0,0.43017237074627235,1.9373391779708982e-13,0
+small,heavy,50,22,5.143340860999956,1,Time limit reached. (HiGHS Status 13: Time limit reached),8338,8288,True,0.9378468984896329,0.0,145.65028600537295,49,1,0.98,0.4244547344214987,4.781730567060549e-12,0
